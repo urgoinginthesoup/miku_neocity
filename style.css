@@ -1,0 +1,379 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: #003344;
+    font-family: "Comic Neue", cursive;
+    font-size: 17px;
+
+    /* Retro tiled background */
+    background-color: #00ffff;
+    background-image:
+        radial-gradient(#ffffff 1.5px, transparent 1.5px),
+        radial-gradient(#ff99ee 1.5px, transparent 1.5px);
+    background-size: 24px 24px, 48px 48px;
+    background-position: 0 0, 12px 12px;
+}
+
+.page {
+    width: 92%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 12px;
+    background: #ffccff;
+    border: 5px ridge #00aaaa;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+header {
+    text-align: center;
+    padding: 20px 10px;
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        #00cccc,
+        #0088ff,
+        #ff66cc,
+        #cc66ff
+    );
+    border: 4px outset #ffffff;
+}
+
+h1 {
+    margin: 12px 0;
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(22px, 5vw, 42px);
+    line-height: 1.6;
+    color: #ffffff;
+    text-shadow:
+        3px 3px #ff00aa,
+        6px 6px #0033cc;
+}
+
+header h2 {
+    font-family: "VT323", monospace;
+    font-size: 32px;
+    color: #ffff00;
+    text-shadow: 2px 2px #000000;
+}
+
+.tiny-text {
+    font-size: 12px;
+}
+
+.rainbow-line {
+    height: 8px;
+    margin: 12px 0;
+    background: linear-gradient(
+        90deg,
+        red, orange, yellow, lime,
+        cyan, blue, violet, red
+    );
+    border: 2px ridge white;
+}
+
+header marquee {
+    margin-top: 10px;
+    padding: 8px;
+    color: #ffff00;
+    background: #000066;
+    font-weight: bold;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.button-row span {
+    padding: 5px 8px;
+    background: #ffffff;
+    color: #ff0099;
+    border: 2px outset #ff99ff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ===== ANIMATIONS ===== */
+
+.blink {
+    animation: blink 0.8s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+    padding: 12px;
+    background: #000066;
+    border: 4px ridge #ffffff;
+}
+
+nav a {
+    padding: 6px;
+    color: #00ffff;
+    font-family: "VT323", monospace;
+    font-size: 23px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffff00;
+    background: #ff0099;
+    text-decoration: underline;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 12px;
+    align-items: start;
+}
+
+.sidebar,
+main {
+    min-width: 0;
+}
+
+.box,
+.welcome {
+    margin-bottom: 14px;
+    padding: 14px;
+    background: #ffffff;
+    border: 4px ridge #00cccc;
+    box-shadow: 4px 4px #ff66cc;
+}
+
+.box h2,
+.welcome h2 {
+    margin-top: 0;
+    padding: 10px 5px;
+    color: #ffffff;
+    background: #0099cc;
+    border: 3px outset #66ffff;
+    font-family: "VT323", monospace;
+    font-size: 29px;
+    text-align: center;
+}
+
+.box h3 {
+    padding: 8px 4px;
+    color: #ffffff;
+    background: #ff33aa;
+    border: 3px outset #ffccff;
+    text-align: center;
+    font-family: "VT323", monospace;
+    font-size: 23px;
+}
+
+.box a {
+    display: block;
+    margin: 10px 0;
+    color: #0000cc;
+    font-weight: bold;
+}
+
+.box a:hover {
+    color: #ff0099;
+    background: #ffff99;
+}
+
+.sidebar .box {
+    background: #ffffcc;
+    border-color: #ff66cc;
+}
+
+.pixel {
+    font-family: "Press Start 2P", monospace;
+    color: #ff0099;
+    text-align: center;
+}
+
+.badge {
+    margin: 12px 0;
+    padding: 10px 4px;
+    background: #000066;
+    border: 3px ridge #00ffff;
+    color: #00ffff;
+    font-family: "Press Start 2P", monospace;
+    font-size: 9px;
+    line-height: 2;
+    text-align: center;
+}
+
+.badge span {
+    color: #ff66cc;
+}
+
+.badge.pink {
+    color: #ffffff;
+    background: #ff0099;
+    border-color: #ffff00;
+}
+
+/* ===== WELCOME ===== */
+
+.welcome {
+    background: #ffffcc;
+    border-color: #ff00aa;
+}
+
+.welcome p {
+    line-height: 1.6;
+}
+
+.center {
+    text-align: center;
+}
+
+.counter {
+    width: fit-content;
+    margin: 10px auto;
+    padding: 8px 12px;
+    color: #00ff00;
+    background: #000000;
+    border: 3px inset #cccccc;
+    font-family: "VT323", monospace;
+    font-size: 30px;
+    letter-spacing: 4px;
+}
+
+/* ===== MIKU PROFILE ===== */
+
+.miku-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.miku-placeholder {
+    width: 200px;
+    max-width: 100%;
+    padding: 6px;
+    background: #ccffff;
+    border: 4px ridge #ff66cc;
+}
+
+.miku-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ===== MUSIC ===== */
+
+.song-list {
+    padding: 12px 12px 12px 40px;
+    background: #ffffcc;
+    border: 3px dashed #ff66cc;
+    line-height: 2;
+}
+
+.song-list li::marker {
+    color: #ff0099;
+}
+
+/* ===== SHRINE ===== */
+
+.shrine {
+    background: #ccffff;
+    border-color: #ff00ff;
+}
+
+.shrine-art {
+    margin: 12px 0;
+    padding: 15px;
+    color: #ff0099;
+    background: #ffffff;
+    border: 5px double #ff66cc;
+    text-align: center;
+}
+
+.shrine-image {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto;
+    border: 3px ridge #00cccc;
+}
+
+/* ===== GUESTBOOK ===== */
+
+.guestbook {
+    padding: 12px;
+    background: #ffffcc;
+    border: 3px dashed #ff00aa;
+}
+
+.guestbook p {
+    padding-bottom: 6px;
+    border-bottom: 1px dotted #ff66cc;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    margin-top: 15px;
+    padding: 12px;
+    color: #ffffff;
+    background: #000066;
+    border: 4px ridge #00ffff;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+    .page {
+        width: 96%;
+        padding: 6px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(140px, 1fr)
+        );
+        gap: 8px;
+    }
+
+    .sidebar .box {
+        margin-bottom: 4px;
+    }
+
+    nav a {
+        font-size: 20px;
+    }
+
+    .miku-profile {
+        flex-direction: column;
+    }
+}
